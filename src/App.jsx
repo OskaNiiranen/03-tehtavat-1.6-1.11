@@ -12,13 +12,19 @@ const Statistics = ({ good, neutral, bad }) => {
 
   return (
     <div>
-      <h2>Feedback Statistics:</h2>
-      <p>Good: {good}</p>
-      <p>Neutral: {neutral}</p>
-      <p>Bad: {bad}</p>
-      <p>Total: {total}</p>
-      <p>Average: {average}</p>
-      <p>Positive Feedback Percentage: {positivePercentage}%</p>
+      <h2>statistics</h2>
+      {total === 0 ? (
+        <p>No feedback given</p>
+      ) : (
+        <>
+          <p>Good: {good}</p>
+          <p>Neutral: {neutral}</p>
+          <p>Bad: {bad}</p>
+          <p>Total: {total}</p>
+          <p>Average: {average}</p>
+          <p>Positive Feedback Percentage: {positivePercentage}%</p>
+        </>
+      )}
     </div>
   );
 };
@@ -41,7 +47,7 @@ const App = () => {
 
   return (
     <div>
-      <h1>Feedback App</h1>
+      <h1>give feedback</h1>
       <div>
         <button onClick={() => handleFeedback("good")}>Good</button>
         <button onClick={() => handleFeedback("neutral")}>Neutral</button>
